@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Résultat du Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #007ACC, #00C2FF);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .result-box {
+            background: rgba(0,0,0,0.75);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 400px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h1>Bravo {{ name }} !</h1>
+        <p>🎯 Ton score est : <strong>{{ score }}</strong></p>
+        {% if best %}
+            <p>🏆 Meilleur score actuel : <strong>{{ best[0] }}</strong> avec <strong>{{ best[1] }}</strong> points.</p>
+        {% else %}
+            <p>Pas encore de meilleur score enregistré !</p>
+        {% endif %}
+        <a href="/">Rejouer</a>
+    </div>
+</body>
+</html>
